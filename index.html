@@ -1,0 +1,91 @@
+<html>
+ <head>
+  <title>Страничка</title>
+ </head>
+ <body>
+  <h1>Пруветствуем на нашей стpаничке для настоящих ценителей командной работы и чистого, минималистичного и эстетичного сайта</h1>
+  <p>
+   группа АДБ-21-01 Наталия Богданова и Чистяков Павел 3 курс Приборостроение</p>
+  </p>
+
+  <p>
+   Здесь вы узнаете обо мне и обо мне!<br />
+   Меня зовут Натали Богомданова а меня Пабло Чистый<br />
+   Я люблю все цвета в зависимости от того как и где их используют<br />
+   а я люблю красный.<br />
+   "Сообщение удалено пользователем"<br />
+   а я плохо слежу за своим внешним видом как иронично.<br />
+   А вы знали что наша страничка ещё и познавательна ?<br />
+   К примеру если человек предпочитает носить чёрное то возможно он не любит когда им командуют.<br />
+   Я как любитель носить чёрную одежду полностью подтверждаю это.</p>
+   А вы знали что наша страничка не только познавательная и хранит информацию о двух человеках но и бросает вызов вашим знаниям по русскому языку и выносливости читать этот бред?<br />
+   Ещё наш сайт учит как сделать простенький сайт на html</p>
+  <p>
+   Откройте Блокнот в Windows можно следующим образом:</p>
+   Пуск — Все программы</p>
+   <img src="otkryvaem-bloknot.jpg" /></p>
+  </p>
+  <p>
+   Стандартные — Блокнот</p>
+   <img src="otkryvaem-bloknot-2.jpg" /></p>
+  </p>
+  <p>
+   В Блокноте наберите следующий код:</p>
+   <img src="pervyi-kod-na-html.gif" /></p>
+  </p>
+  <p>
+   Затем сохраните получившийся документ на Рабочий стол, в виде файла с названием index и расширением .html</p>
+   <img src="sohranyaem-pervyi-kod.gif" /></p>
+   <img src="sohranyaem-pervyi-kod-2.jpg" /></p>
+  </p>
+  <p>
+   Теперь сохранённый файл запускаем через браузер</p>
+   <img src="otkryvaem-v-brauzere.jpg" /></p>
+  </p>
+  <p>
+   ТаДаМ ВаШ ПеРвЫй СаЙт ГоТоВ!</p>
+   <img src="rezultat-v-brauzere.gif" /></p>
+  </p>
+  <p>
+   Ещё где-то в этом тексте спрятана буква напечатанная на англгийском языке</p>
+  </p>
+  <p>
+   Ах да чуть не забыли! Нажмите на ту кнопку снизу а то она оооооочень этого хочет :)</p>
+  </p>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>My title</title>
+        <link rel="stylesheet" type="text/css" href="main.css">
+    </head>
+
+    <body>
+        <div class="main">
+            <button class="btn" onclick="myFunction()">Нажми на меня! >:(</button>
+            <ul id="demo">
+
+            </ul>
+        </div>
+        <script>
+            function sleep(ms) {
+                return new Promise(resolve => setTimeout(resolve, ms));
+            }
+            function myFunction() {
+                (async () => {
+                    let response = await fetch('https://kav-api.kovalev.team/servodrive/lastActualData?servoDriveId=1');
+                    let el = document.getElementById('demo')
+                    el.innerHTML = ""
+                    let text = await response.text(); // прочитать тело ответа как текст
+                    for (const [key, value] of Object.entries(JSON.parse(text)[0])) {
+                        const newEl = document.createElement("li")
+                        newEl.appendChild(document.createTextNode(`${key}: ${value}`))
+                        el.appendChild(newEl)
+                        await sleep(100)
+                    }
+                })()
+            }
+      </script>
+
+  </body>
+ </body>
+ 
+</html> 
